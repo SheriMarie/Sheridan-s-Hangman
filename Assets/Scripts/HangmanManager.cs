@@ -12,10 +12,6 @@ public class HangmanManager : MonoBehaviour
     [SerializeField] private char[] lettersOfChosenWord;
     [SerializeField] private Text[] displayLetters;
 
-    // Have several incorrect guesses that as they are marked off
-    //This could be done in many ways for example draw a hang man 
-    // While the user has incorrect guesses left and has not guessed the word
-
     private void Start()
     {
         ChooseWord();
@@ -28,7 +24,7 @@ public class HangmanManager : MonoBehaviour
         chosenWord = wordList[randomNumber];
         lettersOfChosenWord = chosenWord.ToCharArray();
         // Display the length of the word to the user
-        for (int i = 0; i < lettersOfChosenWord.Length; i++)
+        for (int i = 0; i < displayLetters.Length; i++)
         {
             if (i < lettersOfChosenWord.Length)
             {
@@ -42,11 +38,6 @@ public class HangmanManager : MonoBehaviour
     }
 
     //Prompt the user to guess a letter
-
-
-
-
-
     public void GuessLetter(Text letter)
     {
         //If the guess is correct
@@ -57,6 +48,7 @@ public class HangmanManager : MonoBehaviour
             {
                 if (lettersOfChosenWord[i].ToString() == letter.text)
                 {
+                    letter.gameObject.GetComponentInParent<Image>().color = Color.green;
                     displayLetters[i].text = letter.text;
                 }
             }
@@ -65,17 +57,16 @@ public class HangmanManager : MonoBehaviour
         //If the guess is incorrect
         else
         {
-            //Increment incorrect guesses by 1 
+            //Display incorrect letter to user 
+            letter.gameObject.GetComponentInParent<Image>().color = Color.red;
 
         }
-        //Once letter clicked button cannot be chosen again
+        //block ability to use letter in next guess
         letter.gameObject.GetComponentInParent<Button>().interactable = false;
     }
 
 
 
-    //Display incorrect letter to user 
-    //block ability to use letter in next guess
     //Display Visual to user of how many chances left to guess
     //If the incorrect guesses have all been marked off tell the user 
     //They lost 
