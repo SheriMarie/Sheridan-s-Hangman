@@ -49,7 +49,7 @@ public class HangmanManager : MonoBehaviour
         }
     }
 
-    //Display Visual to user of how many chances left to guess
+
 
     //Prompt the user to guess a letter
     public void GuessLetter(Text letter)
@@ -95,7 +95,7 @@ public class HangmanManager : MonoBehaviour
             //If the incorrect guesses have all been marked off tell the user 
             if (_guesses == 0)
             {
-                letter.gameObject.GetComponentInParent<Button>().interactable = false; 
+                //Menu pop up "you lost
                 //They lost 
                 // Allow user to exit the program or return to menu
             }
@@ -108,7 +108,7 @@ public class HangmanManager : MonoBehaviour
 
     }
 
-
+    //Display Visual to user of how many chances left to guess
     void DrownDuck()
     {
         _displayDucks[_guesses].duckDed.color = new Color(1, 1, 1, 0);
