@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class HangmanManager : MonoBehaviour
@@ -14,8 +15,6 @@ public class HangmanManager : MonoBehaviour
     [SerializeField] private Text[] _displayLetters;
     [SerializeField] private Duckie[] _displayDucks;
     [SerializeField] private int _guesses;
-    private bool gameWon = false;
-    private bool gameLost = false;
     [Serializable]
     public struct Duckie
     {
@@ -49,7 +48,19 @@ public class HangmanManager : MonoBehaviour
         }
     }
 
+    bool isChosenMatchingDisplay()
+    {
 
+        for (int i = 0; i < _lettersOfChosenWord.Length; i++)
+        {
+            if (_lettersOfChosenWord[i] != _displayLetters[i].text[0])
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
 
     //Prompt the user to guess a letter
     public void GuessLetter(Text letter)
@@ -68,9 +79,13 @@ public class HangmanManager : MonoBehaviour
             }
 
             //If correct guess of the word
-            //Tell the user they won
-            //Prompt to play again
-            //Allow user to leave game
+            if (isChosenMatchingDisplay())
+            {
+                //Tell the user they won
+                //Prompt to play again
+                //Allow user to leave game
+                SceneManager.LoadScene("GameWon");
+            }
 
         }
         //If the guess is incorrect
@@ -81,23 +96,18 @@ public class HangmanManager : MonoBehaviour
 
             if (_guesses > 0)
             {
-                if (_guesses < 5)
-                {
-                  //  _displayDucks[_guesses.]
-                }
                 //Increment incorrect guesses by 1
                 _guesses--;
                 _displayDucks[_guesses].duckAlive.color = new Color(1,1,1,0);
                 _displayDucks[_guesses].duckDed.color = Color.white;
                 Invoke("DrownDuck", 0.75f);
-            }
 
-            //If the incorrect guesses have all been marked off tell the user 
-            if (_guesses == 0)
-            {
-                //Menu pop up "you lost
-                //They lost 
-                // Allow user to exit the program or return to menu
+                if (_guesses == 0)
+                {
+                    //Menu pop up "you lost
+                    // Allow user to exit the program or return to menu
+                    SceneManager.LoadScene("GameOver");
+                }
             }
 
         }
