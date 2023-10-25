@@ -160,8 +160,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000030518, y: -134}
-  m_SizeDelta: {x: 459.68, y: 86.19}
+  m_AnchoredPosition: {x: 0, y: -223}
+  m_SizeDelta: {x: 782.1, y: 146.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &144286703
 MonoBehaviour:
@@ -376,8 +376,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -3.638e-12, y: 254}
-  m_SizeDelta: {x: 782.37, y: 146.69}
+  m_AnchoredPosition: {x: -0.000045776, y: 408}
+  m_SizeDelta: {x: 1263.9, y: 305.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &847361148
 MonoBehaviour:
@@ -458,8 +458,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 43.095}
-  m_SizeDelta: {x: 459.68, y: 86.19}
+  m_AnchoredPosition: {x: 0, y: 53}
+  m_SizeDelta: {x: 782.1, y: 146.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &982562447
 MonoBehaviour:
@@ -619,7 +619,7 @@ MonoBehaviour:
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 10
-    m_MaxSize: 40
+    m_MaxSize: 100
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -738,8 +738,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0032749, y: 0.0038834}
-  m_SizeDelta: {x: 2049.6, y: 1152.8}
+  m_AnchoredPosition: {x: 0.00010681, y: 0.0016479}
+  m_SizeDelta: {x: 3995.1, y: 2247}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1777614882
 MonoBehaviour:
@@ -828,10 +828,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -958,7 +958,7 @@ MonoBehaviour:
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 10
-    m_MaxSize: 40
+    m_MaxSize: 100
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
